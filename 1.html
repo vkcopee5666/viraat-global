@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viraat Global | International Trading & Supply Chain Solutions</title>
+    <style>
+        :root {
+            --bg-canvas: #fcfcfc;
+            --navy-primary: #0a192f;
+            --slate-gray: #4a5568;
+            --deep-gold: #c5a880;
+            --gold-hover: #b39366;
+            --white: #ffffff;
+            --border-light: rgba(10, 25, 47, 0.08);
+            --card-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--navy-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Global Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 6%;
+            background-color: rgba(252, 252, 252, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .brand-logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--navy-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            color: var(--deep-gold);
+            font-weight: 300;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--navy-primary);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--deep-gold);
+        }
+
+        .header-cta {
+            background-color: var(--navy-primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--card-radius);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s;
+        }
+
+        .header-cta:hover {
+            background-color: #172a45;
+        }
+
+        /* --- Industrial Hero Canvas --- */
+        .hero-section {
+            padding: 80px 6% 100px 6%;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--navy-primary);
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--slate-gray);
+            margin-bottom: 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--deep-gold);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: var(--card-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--navy-primary);
+            padding: 16px 36px;
+            border-radius: var(--card-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--navy-primary);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(10, 25, 47, 0.04);
+        }
+
+        .hero-display-card {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--card-radius);
+            background: linear-gradient(rgba(10,25,47,0.2), rgba(10,25,47,0.4)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+            box-shadow: 0 20px 40px rgba(10,25,47,0.08);
+        }
+
+        /* --- Trust Metric Bar --- */
+        .metrics-bar {
+            background-color: var(--navy-primary);
+            color: var(--white);
+            padding: 40px 6%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            gap: 30px;
+        }
+
+        .metric-item h3 {
+            font-size: 36px;
+            color: var(--deep-gold);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .metric-item p {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a8b2d1;
+        }
+
+        /* --- Corporate Compliance Upload Module --- */
+        .upload-section {
+            background-color: #f0f2f5;
+            padding: 80px 6%;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .upload-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .upload-info h2 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .upload-info p {
+            font-size: 15px;
+            color: var(--slate-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .document-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .document-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            background: #fafafa;
+            border: 1px solid var(--border-light);
+            border-radius: var(--card-radius);
+        }
+
+        .doc-title {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .doc-sub {
+            font-size: 12px;
+            color: var(--slate-gray);
+            margin-top: 2px;
+        }
+
+        .file-upload-btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            background-color: var(--navy-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--card-radius);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .file-upload-btn:hover {
+            background-color: var(--deep-gold);
+        }
+
+        .file-upload-btn input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* --- Import/Export Sectors Grid --- */
+        .section-container {
+            padding: 100px 6% 80px 6%;
+        }
+
+        .section-title-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 45px;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 20px;
+        }
+
+        .section-title-bar h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--navy-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .section-title-bar span {
+            color: var(--deep-gold);
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sector-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .sector-card {
+            text-decoration: none;
+            color: var(--navy-primary);
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(10,25,47,0.05);
+            border-color: var(--deep-gold);
+        }
+
+        .image-frame {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background-color: #f0f2f5;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .sector-details {
+            padding: 24px;
+        }
+
+        .sector-details h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .sector-details p {
+            font-size: 14px;
+            color: var(--slate-gray);
+            line-height: 1.5;
+        }
+
+        /* --- NEW: Dedicated Contact & Trade Operations Block --- */
+        .contact-section {
+            background-color: #ffffff;
+            padding: 100px 6%;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-meta h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-meta p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--slate-gray);
+            margin-bottom: 30px;
+        }
+
+        .channels-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .channel-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .channel-icon-box {
+            background-color: rgba(197, 168, 128, 0.1);
+            color: var(--deep-gold);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: var(--card-radius);
+            flex-shrink: 0;
+        }
+
+        .channel-info h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--slate-gray);
+            margin-bottom: 5px;
+        }
+
+        .channel-info a {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .channel-info a:hover {
+            color: var(--deep-gold);
+        }
+
+        /* Direct RFQ Action Form */
+        .quick-rfq-form {
+            background: #fafafa;
+            border: 1px solid var(--border-light);
+            padding: 40px;
+            border-radius: var(--card-radius);
+        }
+
+        .quick-rfq-form h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .form-element {
+            margin-bottom: 20px;
+        }
+
+        .form-element label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            color: var(--slate-gray);
+        }
+
+        .form-element input, .form-element textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            background-color: var(--white);
+            border-radius: var(--card-radius);
+            font-size: 14px;
+            color: var(--navy-primary);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-element input:focus, .form-element textarea:focus {
+            border-color: var(--deep-gold);
+        }
+
+        .submit-rfq-btn {
+            width: 100%;
+            background-color: var(--navy-primary);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border-radius: var(--card-radius);
+            transition: background-color 0.2s;
+        }
+
+        .submit-rfq-btn:hover {
+            background-color: #172a45;
+        }
+
+        /* --- Corporate B2B Footer --- */
+        footer {
+            background-color: var(--navy-primary);
+            color: #a8b2d1;
+            padding: 80px 6% 30px 6%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-brand h3 span {
+            color: var(--deep-gold);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 14px;
+        }
+
+        .footer-col ul li a {
+            color: #a8b2d1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="brand-logo">Viraat <span>Global</span></a>
+        
+        <nav class="nav-menu">
+            <a href="#">Sectors</a>
+            <a href="#">Verification</a>
+            <a href="#">Compliance</a>
+            <a href="#contact">Contact Desk</a>
+        </nav>
+
+        <a href="#contact" class="header-cta">Initiate Trade Inquiry</a>
+    </header>
+
+    <!-- Industrial Hero Canvas -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Connecting global supply chains with absolute precision.</h1>
+            <p>Viraat Global is a premier cross-border trade framework specializing in bulk commodities, flora-agricultural exports, raw sourcing infrastructure, and international compliance fulfillment.</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn-primary">Request a Custom Quote</a>
+                <a href="tel:+917353251776" class="btn-secondary">Call Trade Desk</a>
+            </div>
+        </div>
+        <div class="hero-display-card"></div>
+    </section>
+
+    <!-- Trust Metric Bar -->
+    <section class="metrics-bar">
+        <div class="metric-item">
+            <h3>45+</h3>
+            <p>Trade Destination Countries</p>
+        </div>
+        <div class="metric-item">
+            <h3>M+ Tons</h3>
+            <p>Annual Cargo Volumes Handled</p>
+        </div>
+        <div class="metric-item">
+            <h3>100%</h3>
+            <p>Sanction & Regulatory Compliant</p>
+        </div>
+    </section>
+
+    <!-- Corporate Compliance Upload Module -->
+    <section class="upload-section">
+        <div class="upload-container">
+            <div class="upload-info">
+                <h2>Compliance & Vault Gateway</h2>
+                <p>Securely submit legal entity documentation directly to our risk assessment desk to fast-track import-export letters of credit, custom clearances, and multi-port allocations.</p>
+                <p style="font-size: 13px; font-weight: bold;">Accepted file formats: PDF, JPEG, PNG (Max 10MB per file).</p>
+            </div>
+            
+            <div class="document-grid">
+                <div class="document-row">
+                    <div>
+                        <div class="doc-title">GST Certification</div>
+                        <div class="doc-sub">Goods and Services Tax Registration Certificate</div>
+                    </div>
+                    <div class="file-upload-btn">
+                        <span>Upload File</span>
+                        <input type="file" name="gst_certificate" accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                </div>
+
+                <div class="document-row">
+                    <div>
+                        <div class="doc-title">IEC Code Document</div>
+                        <div class="doc-sub">Importer-Exporter Code issued by DGFT</div>
+                    </div>
+                    <div class="file-upload-btn">
+                        <span>Upload File</span>
+                        <input type="file" name="iec_document" accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                </div>
+
+                <div class="document-row">
+                    <div>
+                        <div class="doc-title">MSME / Udyam Registration</div>
+                        <div class="doc-sub">Micro, Small & Medium Enterprises Certification</div>
+                    </div>
+                    <div class="file-upload-btn">
+                        <span>Upload File</span>
+                        <input type="file" name="msme_certificate" accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Import/Export Sectors Section -->
+    <section class="section-container">
+        <div class="section-title-bar">
+            <h2>Core Import & Export Divisions</h2>
+            <span>Global Operations Portfolio</span>
+        </div>
+
+        <div class="sector-grid">
+            <div class="sector-card">
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&q=80&w=400" alt="Commercial Flora">
+                </div>
+                <div class="sector-details">
+                    <h3>Commercial Flora</h3>
+                    <p>Bulk distribution and export of premium industrial plants, nursery networks, and global wholesale seeds.</p>
+                </div>
+            </div>
+            <div class="sector-card">
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&q=80&w=400" alt="Agri-Commodities">
+                </div>
+                <div class="sector-details">
+                    <h3>Agri-Commodities</h3>
+                    <p>Large-scale global sourcing pipelines for raw foods, grains, spices, and perishable agricultural products.</p>
+                </div>
+            </div>
+            <div class="sector-card">
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=400" alt="Floriculture">
+                </div>
+                <div class="sector-details">
+                    <h3>Floriculture Trades</h3>
+                    <p>Temperature-controlled cold-chain export frameworks specializing in fresh bulk-cut floral distribution lines.</p>
+                </div>
+            </div>
+            <div class="sector-card">
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=400" alt="Freight">
+                </div>
+                <div class="sector-details">
+                    <h3>Intermodal Freight</h3>
+                    <p>Comprehensive ocean and air charter custom clearings, optimized precisely for multi-jurisdiction trade routes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Dedicated Contact & Trade Operations Desk -->
+    <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-meta">
+                <h2>Global Operations Desk</h2>
+                <p>Connect with our procurement and logistics managers. Whether setting up raw commodity pipelines or requesting phytosanitary verifications, our team responds to formal trade inquiries within 12 business hours.</p>
+                
+                <div class="channels-list">
+                    <!-- Phone Channel -->
+                    <div class="channel-card">
+                        <div class="channel-icon-box">☎</div>
+                        <div class="channel-info">
+                            <h4>Primary Trade Line</h4>
+                            <a href="tel:+917353251776">+91-7353251776</a>
+                        </div>
+                    </div>
+                    <!-- Email Channel -->
+                    <div class="channel-card">
+                        <div class="channel-icon-box">✉</div>
+                        <div class="channel-info">
+                            <h4>Corporate Desk Email</h4>
+                            <a href="mailto:info@viraatglobal.com">info@viraatglobal.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick RFQ Form Form -->
+            <div class="quick-rfq-form">
+                <h3>Submit Quick Trade Request</h3>
+                <form action="#">
+                    <div class="form-element">
+                        <label>Company Legal Entity Name</label>
+                        <input type="text" placeholder="e.g., Global Logistics Corp" required>
+                    </div>
+                    <div class="form-element">
+                        <label>Target Port / Destination Country</label>
+                        <input type="text" placeholder="e.g., Port of Rotterdam, Netherlands" required>
+                    </div>
+                    <div class="form-element">
+                        <label>Commodity Specifications & Volume</label>
+                        <textarea rows="4" placeholder="Describe the cargo type, metric tonnage required, and shipping frequencies..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-rfq-btn">Transmit Trade Query</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Enterprise Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Viraat <span>Global</span></h3>
+                <p style="font-size: 14px; line-height: 1.6; color: #8892b0;">Architecting world-class logistics pipelines, raw material sourcing structures, and trusted international merchant operations.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Trade Sectors</h4>
+                <ul>
+                    <li><a href="#">Industrial Flora Supply</a></li>
+                    <li><a href="#">Agri-Bulk Commodities</a></li>
+                    <li><a href="#">Cold-Chain Floriculture</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Governance</h4>
+                <ul>
+                    <li><a href="#">Custom Clearance Compliance</a></li>
+                    <li><a href="#">Phytosanitary Protocols</a></li>
+                    <li><a href="#">Sourcing Quality Audits</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Corporate Contacts</h4>
+                <ul>
+                    <li><a href="tel:+917353251776">+91-7353251776</a></li>
+                    <li><a href="mailto:info@viraatglobal.com">info@viraatglobal.com</a></li>
+                    <li><a href="#">Global Hubs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Viraat Global Ltd. All trade operations conform to international ICC Incoterms and customs standards.</p>
+            <p style="color: var(--deep-gold);">Security Secured Broker Line</p>
+        </div>
+    </footer>
+
+</body>
+</html>
